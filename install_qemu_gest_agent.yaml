@@ -1,0 +1,10 @@
+---
+
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Install gemu guest agent package
+    apt:
+      name: qemu-guest-agent

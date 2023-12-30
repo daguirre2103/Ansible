@@ -1,0 +1,19 @@
+---
+
+
+- hosts: 172.25.5.104
+  become: true
+  tasks:
+
+  - name: update repositories
+    apt:
+      update_cache: yes
+
+  - name: Remove apache2 package
+    apt:
+      name: apache2
+      state: absent
+  - name: Installa php support for apache
+    apt:
+     name: libapache2-mod-php
+     state: absent
