@@ -1,0 +1,16 @@
+---
+
+
+- hosts: 172.25.5.104
+  become: true
+  tasks:
+
+  - name: Install apache and php
+    package: #With this word word ansible will choose the correct application program for each os distribution
+      name: 
+        - "{{apache_package}}" #Variable configured in inventory file
+        - "{{php_package}}" #Variable configured in inventory file   
+      state: latest
+      update_cache: yes
+    
+
